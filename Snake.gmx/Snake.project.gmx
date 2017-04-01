@@ -9,6 +9,7 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\mexican_sprite</sprite>
+    <sprite>sprites\us_sprite</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -16,6 +17,7 @@
     <object>objects\player</object>
     <object>objects\tail</object>
     <object>objects\mexican</object>
+    <object>objects\us_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
