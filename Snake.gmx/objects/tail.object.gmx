@@ -53,7 +53,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>motion_set(point_direction(x, y, follow.x, follow.y), player.playerSpeed);
+            <string>motion_set(point_direction(x, y, follow.x, follow.y), player.speed);
 
 if distance_to_object(follow) &lt; 1 {
     speed = 0;
