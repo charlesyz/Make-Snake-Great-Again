@@ -32,6 +32,9 @@ mexicans[99] = 0
 j = 0;
 speed = 5;
 direction = 0;
+life = 3;
+
+instance_create(random(room_width), random(room_height), mexican);
 </string>
           </argument>
         </arguments>
@@ -54,7 +57,7 @@ direction = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>image_angle = direction
 if keyboard_check(ord('A')){
     h = 1;
 }
@@ -67,12 +70,33 @@ else {
 
 direction = direction + turn*h;
 
+
+for(i = 0; i &lt; life; i++)
+{
+    draw_sprite(sprite4, 0, 10 + 32*i, 10)
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="90">
+    <event eventtype="4" ename="tail">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,17 +113,16 @@ direction = direction + turn*h;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (i == 0){
-    createX = -sign(hspeed) * 8;
-    createY = -sign(vspeed) * 8;
-    segment[i] = instance_create(x + createX, y +  createY, tail);
+            <string>if (player.i == 0){
+    createX = -lengthdir_x(45,player.direction)
+    createY = -lengthdir_y(45,player.direction)
+    player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
 }
 else{
        
-    createX = -sign(segment[i - 1].hspeed) * 8;
-    createY = -sign(segment[i - 1].vspeed) * 8;
-    segment[i] = instance_create(segment[i - 1].x + createX, segment[i - 1].y + createY, tail);
+    createX = -lengthdir_x(26,player.segment[player.i - 1].direction)
+    createY = -lengthdir_y(26,player.segment[player.i - 1].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i - 1].x + createX, player.segment[player.i - 1].y + createY, tail);
 }
 
 i += 1;
@@ -125,8 +148,7 @@ i += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(random(room_width), random(room_height), mexican);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
