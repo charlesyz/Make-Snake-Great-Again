@@ -25,6 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>if x &gt; us_obj.x {
     image_angle = direction - 180;
 } else {
@@ -33,6 +34,9 @@
 
 
 motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
+=======
+            <string>motion_set(point_direction(x, y, us_obj.x, us_obj.y), 3);
+>>>>>>> refs/remotes/origin/Chazzz
 </string>
           </argument>
         </arguments>
@@ -53,6 +57,7 @@ motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string></string>
           </argument>
         </arguments>
@@ -194,6 +199,28 @@ motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
           <argument>
             <kind>0</kind>
             <string>0.2</string>
+=======
+            <string>player.lives -= 1;
+
+
+rand = random(4);
+if (rand &lt; 1){
+    instance_create(random(room_width), room_height, mexican);
+}
+else if (rand &lt; 2){
+    instance_create(random(room_width), 0, mexican);
+}
+else if (rand &lt; 3){
+    instance_create(room_width, random(room_height), mexican);
+}
+else if (rand &lt; 4){
+    instance_create(0, random(room_height), mexican);
+}
+
+
+instance_destroy();
+</string>
+>>>>>>> refs/remotes/origin/Chazzz
           </argument>
         </arguments>
       </action>

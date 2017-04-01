@@ -32,7 +32,8 @@ mexicans[99] = 0
 j = 0;
 speed = 5;
 direction = 0;
-life = 4;
+
+lives = 3;
 
 rand = random(4);
 if (rand &lt; 1){
@@ -108,10 +109,8 @@ else {
 
 direction = direction + turn*h;
 
-
-for(j = 0; j &lt; life; j++)
-{
-    draw_sprite(sprite4, 0, 10 + 32*j, 10)
+if lives &lt;= 0{
+    room_restart();
 }
 </string>
           </argument>
