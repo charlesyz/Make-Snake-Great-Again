@@ -18,7 +18,6 @@
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\tail</object>
-    <object>objects\mexican</object>
     <object>objects\us_obj</object>
     <object>objects\heart</object>
   </objects>
