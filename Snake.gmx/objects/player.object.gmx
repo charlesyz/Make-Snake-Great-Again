@@ -48,6 +48,31 @@ else if (rand &lt; 4){
     instance_create(0, random(room_height), mexican);
 }
 
+if (i == 0){
+    createX = -lengthdir_x(40,player.direction)
+    createY = -lengthdir_y(40,player.direction)
+    player.segment[0] = instance_create(x + createX, y +  createY, tail);
+}
+else{
+    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
+    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+}
+
+i += 1;
+
+if (i == 0){
+    createX = -lengthdir_x(40,player.direction)
+    createY = -lengthdir_y(40,player.direction)
+    player.segment[0] = instance_create(x + createX, y +  createY, tail);
+}
+else{
+    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
+    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+}
+
+i += 1;
 </string>
           </argument>
         </arguments>
