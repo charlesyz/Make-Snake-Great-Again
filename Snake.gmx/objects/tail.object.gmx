@@ -26,10 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>if (player.i == 0){
+
     follow = player.id;
+    cool = true;
 }
 else {
-    follow = player.segment[player.i];
+    follow = player.segment[player.i-1];
+    cool = false;
 }
 </string>
           </argument>
@@ -55,15 +58,8 @@ else {
             <kind>1</kind>
             <string>motion_set(point_direction(x, y, follow.x, follow.y), player.speed);
 image_angle = direction;
-if follow == player.id {
-    if point_distance(x,y,follow.x,follow.y) &lt; 100 {
-        speed = 0;
-    }
-}
-else {
-    if point_distance(x,y,follow.x,follow.y) &lt; 26 {
-        speed = 0;
-    }
+if point_distance(x,y,follow.x,follow.y) &lt; 26 {
+    speed = 0;
 }
 
 
