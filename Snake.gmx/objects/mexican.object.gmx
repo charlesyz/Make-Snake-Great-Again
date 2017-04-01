@@ -89,16 +89,15 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (player.i == 0){
-    createX = -sign(player.hspeed) * 8;
-    createY = -sign(player.vspeed) * 8;
+            <string>if (player.i == 0){
+    createX = -lengthdir_x(speed,player.direction)
+    createY = -lengthdir_y(speed,player.direction)
     player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
 }
 else{
        
-    createX = -sign(player.segment[player.i - 1].hspeed) * 8;
-    createY = -sign(player.segment[player.i - 1].vspeed) * 8;
+    createX = -lengthdir_x(speed,player.segment[player.i - 1].direction)
+    createY = -lengthdir_y(speed,player.segment[player.i - 1].direction)
     player.segment[player.i] = instance_create(player.segment[player.i - 1].x + createX, player.segment[player.i - 1].y + createY, tail);
 }
 
@@ -143,16 +142,15 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (player.i == 0){
-    createX = -sign(player.hspeed) * 8;
-    createY = -sign(player.vspeed) * 8;
+            <string>if (player.i == 0){
+    createX = -lengthdir_x(speed,player.direction)
+    createY = -lengthdir_y(speed,player.direction)
     player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
 }
 else{
        
-    createX = -sign(player.segment[player.i - 1].hspeed) * 8;
-    createY = -sign(player.segment[player.i - 1].vspeed) * 8;
+    createX = -lengthdir_x(speed,player.segment[player.i - 1].direction)
+    createY = -lengthdir_y(speed,player.segment[player.i - 1].direction)
     player.segment[player.i] = instance_create(player.segment[player.i - 1].x + createX, player.segment[player.i - 1].y + createY, tail);
 }
 
