@@ -29,6 +29,7 @@
 turn = 5;
 i = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 mexicans[99] = 0
 j = 0;
 =======
@@ -36,6 +37,9 @@ speed = 5;
 direction = 0;
 
 >>>>>>> origin/master
+=======
+
+>>>>>>> parent of b1ccd64... Merge remote-tracking branch 'refs/remotes/origin/Chazzz'
 </string>
           </argument>
         </arguments>
@@ -107,30 +111,6 @@ else{
 }
 
 i += 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="88">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>mexicans[j] = instance_create(random(room_width),random(room_height), mexicoan);
-j++;
 </string>
           </argument>
         </arguments>
