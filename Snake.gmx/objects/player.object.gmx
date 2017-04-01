@@ -52,21 +52,31 @@ i = 0;
             <kind>1</kind>
             <string>playerSpeed = 5;
 if keyboard_check(ord('A')){
-    hspeed = -playerSpeed;
-    vspeed = 0;
+    if (hspeed == 0){
+        hspeed = -playerSpeed;
+        vspeed = 0;
+    }
 }
 else if keyboard_check(ord('D')){
-    hspeed = playerSpeed;
-    vspeed = 0;
+    if (hspeed == 0){
+        hspeed = playerSpeed;
+        vspeed = 0;
+    }
 }
 else if keyboard_check(ord('W')){
-    vspeed = -playerSpeed;
-    hspeed = 0;
+    if (vspeed == 0){
+        vspeed = -playerSpeed;
+        hspeed = 0;
+    }
 }
 else if keyboard_check(ord('S')){
-    vspeed = playerSpeed;
-    hspeed = 0;
+    if (vspeed == 0){
+        vspeed = playerSpeed;
+        hspeed = 0;
+    }
 }
+
+
 
 </string>
           </argument>
@@ -92,15 +102,14 @@ else if keyboard_check(ord('S')){
             <kind>1</kind>
             <string>
 if (i == 0){
-   
-    createX = -sign(hspeed) * 32;
-    createY = -sign(vspeed) * 32;
+    createX = -sign(hspeed) * 8;
+    createY = -sign(vspeed) * 8;
     segment[i] = instance_create(x + createX, y +  createY, tail);
 }
 else{
        
-    createX = -sign(segment[i - 1].hspeed) * 32;
-    createY = -sign(segment[i - 1].vspeed) * 32;
+    createX = -sign(segment[i - 1].hspeed) * 8;
+    createY = -sign(segment[i - 1].vspeed) * 8;
     segment[i] = instance_create(segment[i - 1].x + createX, segment[i - 1].y + createY, tail);
 }
 

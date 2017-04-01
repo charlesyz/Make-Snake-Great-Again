@@ -29,7 +29,7 @@
     follow = player.id;
 }
 else {
-    follow = player.segment[player.i];
+    follow = player.segment[player.i - 1];
 }
 </string>
           </argument>
@@ -54,45 +54,11 @@ else {
           <argument>
             <kind>1</kind>
             <string>motion_set(point_direction(x, y, follow.x, follow.y), player.playerSpeed);
-/*if (!place_free(x + lengthdir_x(speed,direction), y + lengthdir_y(speed,direction))){
+
+if distance_to_object(follow) &lt; 1 {
     speed = 0;
-} */
-if instance_place(x,y,tail) != noone {
-
-    if instance_place(x,y,tail).id == follow {
-
-        x = xprevious;
-        y = yprevious;
-    }
 }
-if instance_place(x,y,player) != noone {
 
-    if instance_place(x,y,player).id == follow {
-    
-        x = xprevious;
-        y = yprevious;
-    }
-} 
-
-/*hspeed = follow.hspeed;
-vspeed = follow.vspeed;
-
-if (x &gt; follow.x &amp;&amp; follow.hspeed == 0){
-    hspeed = -player.playerSpeed;
-    vspeed = 0;
-}
-else if (x &lt; follow.x  &amp;&amp; follow.hspeed == 0){
-    hspeed = player.playerSpeed;
-    vspeed = 0;
-}  
-else if (y &gt; follow.y  &amp;&amp; follow.vspeed == 0){
-    vspeed = player.playerSpeed;
-    hspeed = 0;
-}  
-else if (y &lt; follow.y  &amp;&amp; follow.vspeed == 0){
-    vspeed = -player.playerSpeed;
-    hspeed = 0;
-}  
 </string>
           </argument>
         </arguments>
