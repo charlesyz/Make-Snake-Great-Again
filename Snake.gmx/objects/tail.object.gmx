@@ -29,7 +29,7 @@
     follow = player.id;
 }
 else {
-    follow = player.segment[player.i - 1];
+    follow = player.segment[player.i];
 }
 </string>
           </argument>
