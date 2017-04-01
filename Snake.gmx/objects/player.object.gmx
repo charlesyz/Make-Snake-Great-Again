@@ -32,7 +32,7 @@ mexicans[99] = 0
 j = 0;
 speed = 5;
 direction = 0;
-life = 3;
+life = 4;
 
 rand = random(4);
 if (rand &lt; 1){
@@ -84,9 +84,34 @@ else {
 direction = direction + turn*h;
 
 
-for(i = 0; i &lt; life; i++)
+for(j = 0; j &lt; life; j++)
 {
-    draw_sprite(sprite4, 0, 10 + 32*i, 10)
+    draw_sprite(sprite4, 0, 10 + 32*j, 10)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="tail">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.cool == false {
+    room_restart();
 }
 </string>
           </argument>
@@ -110,15 +135,15 @@ for(i = 0; i &lt; life; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (player.i == 0){
-    createX = -lengthdir_x(45,player.direction)
-    createY = -lengthdir_y(45,player.direction)
-    player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
+            <string>if (i == 0){
+    createX = -lengthdir_x(40,player.direction)
+    createY = -lengthdir_y(40,player.direction)
+    player.segment[0] = instance_create(x + createX, y +  createY, tail);
 }
 else{
-    createX = -lengthdir_x(26,player.segment[player.i].direction)
-    createY = -lengthdir_y(26,player.segment[player.i].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i].x + createX, player.segment[player.i].y + createY, tail);
+    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
+    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
 }
 
 i += 1;
