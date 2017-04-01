@@ -28,18 +28,10 @@
             <string>segment[99] = 0;
 turn = 5;
 i = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
 mexicans[99] = 0
 j = 0;
-=======
 speed = 5;
 direction = 0;
-
->>>>>>> origin/master
-=======
-
->>>>>>> parent of b1ccd64... Merge remote-tracking branch 'refs/remotes/origin/Chazzz'
 </string>
           </argument>
         </arguments>
