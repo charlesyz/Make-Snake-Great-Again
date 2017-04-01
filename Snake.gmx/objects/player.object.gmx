@@ -54,7 +54,7 @@ direction = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>image_angle = direction
 if keyboard_check(ord('A')){
     h = 1;
 }
