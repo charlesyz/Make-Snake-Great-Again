@@ -32,6 +32,9 @@ mexicans[99] = 0
 j = 0;
 speed = 5;
 direction = 0;
+life = 3;
+
+instance_create(random(room_width), random(room_height), mexican);
 </string>
           </argument>
         </arguments>
@@ -67,25 +70,14 @@ else {
 
 direction = direction + turn*h;
 
+
+for(i = 0; i &lt; life; i++)
+{
+    draw_sprite(sprite4, 0, 10 + 32*i, 10)
+}
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="tail">
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="9" enumb="90">
@@ -141,8 +133,7 @@ i += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(random(room_width), random(room_height), mexican);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
