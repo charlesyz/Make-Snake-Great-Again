@@ -28,9 +28,10 @@
             <string>segment[99] = 0;
 turn = 5;
 i = 0;
+mexicans[99] = 0
+j = 0;
 speed = 5;
 direction = 0;
-
 </string>
           </argument>
         </arguments>
