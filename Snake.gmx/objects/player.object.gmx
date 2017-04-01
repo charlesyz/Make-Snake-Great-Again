@@ -34,7 +34,20 @@ speed = 5;
 direction = 0;
 life = 3;
 
-instance_create(random(room_width), random(room_height), mexican);
+rand = random(4);
+if (rand &lt; 1){
+    instance_create(random(room_width), room_height, mexican);
+}
+else if (rand &lt; 2){
+    instance_create(random(room_width), 0, mexican);
+}
+else if (rand &lt; 3){
+    instance_create(room_width, random(room_height), mexican);
+}
+else if (rand &lt; 4){
+    instance_create(0, random(room_height), mexican);
+}
+
 </string>
           </argument>
         </arguments>

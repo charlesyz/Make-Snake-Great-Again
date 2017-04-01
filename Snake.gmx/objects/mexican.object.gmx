@@ -50,6 +50,22 @@
             <kind>1</kind>
             <string>player.life -= 1;
 
+
+rand = random(4);
+if (rand &lt; 1){
+    instance_create(random(room_width), room_height, mexican);
+}
+else if (rand &lt; 2){
+    instance_create(random(room_width), 0, mexican);
+}
+else if (rand &lt; 3){
+    instance_create(room_width, random(room_height), mexican);
+}
+else if (rand &lt; 4){
+    instance_create(0, random(room_height), mexican);
+}
+
+
 instance_destroy();
 </string>
           </argument>
@@ -84,7 +100,22 @@ else{
     player.segment[player.i] = instance_create(player.segment[player.i].x + createX, player.segment[player.i].y + createY, tail);
 }
 
-instance_create(random(room_width), random(room_height), mexican);
+player.i += 1;
+
+
+rand = random(4);
+if (rand &lt; 1){
+    instance_create(random(room_width), room_height, mexican);
+}
+else if (rand &lt; 2){
+    instance_create(random(room_width), 0, mexican);
+}
+else if (rand &lt; 3){
+    instance_create(room_width, random(room_height), mexican);
+}
+else if (rand &lt; 4){
+    instance_create(0, random(room_height), mexican);
+}
 
 instance_destroy();
 </string>
@@ -122,7 +153,21 @@ else{
 
 player.i += 1;
 
-instance_create(random(room_width), random(room_height), mexican);
+
+rand = random(4);
+if (rand &lt; 1){
+    instance_create(random(room_width), room_height, mexican);
+}
+else if (rand &lt; 2){
+    instance_create(random(room_width), 0, mexican);
+}
+else if (rand &lt; 3){
+    instance_create(room_width, random(room_height), mexican);
+}
+else if (rand &lt; 4){
+    instance_create(0, random(room_height), mexican);
+}
+
 
 instance_destroy();
 </string>
