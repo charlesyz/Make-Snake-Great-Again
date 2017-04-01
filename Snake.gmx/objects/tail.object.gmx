@@ -55,9 +55,16 @@ else {
             <kind>1</kind>
             <string>motion_set(point_direction(x, y, follow.x, follow.y), player.speed);
 image_angle = direction;
-if distance_to_object(follow) &lt; 1 {
-    speed = 0;
+if object_get_name(follow) == object_get_name(player) {
+    if point_distance(x,y,follow.x,follow.y) &lt; 40 {
+        speed = 0;
+    }
+} else {
+    if point_distance(x,y,follow.x,follow.y) &lt; 40 {
+        speed = 0;
+    }
 }
+
 
 </string>
           </argument>
