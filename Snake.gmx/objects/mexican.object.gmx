@@ -31,7 +31,7 @@
     image_angle = direction;
 }
 
-
+motion_set(point_direction(x, y, us_obj.x, us_obj.y), 2);
 motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
 </string>
           </argument>
@@ -229,23 +229,25 @@ motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.life -= 1;
+            <string>player.lives -= 1;
 
-
-rand = random(4);
-if (rand &lt; 1){
-    instance_create(random(room_width), room_height, mexican);
+for (abcd = 0; abcd &lt; floor(player.i/2) + 1; abcd += 1) {
+    if instance_number(object_index)-1 &lt; floor(player.i/2)+1 {
+        rand = random(4);
+        if (rand &lt; 1){
+            instance_create(random(room_width), room_height, mexican);
+        }
+        else if (rand &lt; 2){
+            instance_create(random(room_width), 0, mexican);
+        }
+        else if (rand &lt; 3){
+            instance_create(room_width, random(room_height), mexican);
+        }
+        else if (rand &lt; 4){
+            instance_create(0, random(room_height), mexican);
+        }
+    }
 }
-else if (rand &lt; 2){
-    instance_create(random(room_width), 0, mexican);
-}
-else if (rand &lt; 3){
-    instance_create(room_width, random(room_height), mexican);
-}
-else if (rand &lt; 4){
-    instance_create(0, random(room_height), mexican);
-}
-
 
 instance_destroy();
 </string>
@@ -270,36 +272,97 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (player.i == 0){
-    createX = -lengthdir_x(40,player.direction)
-    createY = -lengthdir_y(40,player.direction)
-    player.segment[0] = instance_create(x + createX, y +  createY, tail);
+            <string>
+if (player.i == 0){
+    createX = -lengthdir_x(4,player.direction)
+    createY = -lengthdir_y(4,player.direction)
+    if player.growing &gt;= 15 {
+        player.growing = 3;
+        player.segment[0] = instance_create(x + createX, y +  createY, tail);
+        player.i += 1;
+        player.speed += 1;
+    }
+    else {
+        player.growing += 3;
+    }
+    
 }
 else{
-    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
-    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+    createX = -lengthdir_x(4,player.segment[player.i-1].direction)
+    createY = -lengthdir_y(4,player.segment[player.i-1].direction)
+    if player.growing &gt;= 15 {
+        player.growing = 3;
+        player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+        player.i += 1;
+        player.speed += 1;
+    }
+    else {
+        player.growing += 3;
+    }
+    
 }
 
-player.i += 1;
 
 
-rand = random(4);
-if (rand &lt; 1){
-    instance_create(random(room_width), room_height, mexican);
+for (abcd = 0; abcd &lt;= floor(player.i/2) + 1; abcd += 1) {
+    if instance_number(object_index)-1 &lt; floor(player.i/2)+1 {
+        rand = random(4);
+        if (rand &lt; 1){
+            instance_create(random(room_width), room_height, mexican);
+        }
+        else if (rand &lt; 2){
+            instance_create(random(room_width), 0, mexican);
+        }
+        else if (rand &lt; 3){
+            instance_create(room_width, random(room_height), mexican);
+        }
+        else if (rand &lt; 4){
+            instance_create(0, random(room_height), mexican);
+        }
+    }
 }
-else if (rand &lt; 2){
-    instance_create(random(room_width), 0, mexican);
-}
-else if (rand &lt; 3){
-    instance_create(room_width, random(room_height), mexican);
-}
-else if (rand &lt; 4){
-    instance_create(0, random(room_height), mexican);
-}
-
 instance_destroy();
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>532</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_effect</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>4</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>x</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>y</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>13</kind>
+            <string>255</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -307,17 +370,24 @@ instance_destroy();
     <event eventtype="4" ename="player">
       <action>
         <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_perform(ev_collision,tail);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
