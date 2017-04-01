@@ -8,7 +8,8 @@
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
-    <sprite>sprites\mexican_sprite</sprite>
+    <sprite>sprites\mexican_sprite_right</sprite>
+    <sprite>sprites\mexican_sprite_left</sprite>
     <sprite>sprites\us_sprite</sprite>
     <sprite>sprites\sprite4</sprite>
   </sprites>
