@@ -54,7 +54,7 @@ direction = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>image_angle = direction
 if keyboard_check(ord('A')){
     h = 1;
 }
@@ -70,6 +70,22 @@ direction = direction + turn*h;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="tail">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="9" enumb="90">
