@@ -29,7 +29,7 @@
     follow = player.id;
 }
 else {
-    follow = player.segment[player.i - 1];
+    follow = player.segment[player.i];
 }
 </string>
           </argument>
@@ -56,7 +56,7 @@ else {
             <string>motion_set(point_direction(x, y, follow.x, follow.y), player.speed);
 image_angle = direction;
 if follow == player.id {
-    if point_distance(x,y,follow.x,follow.y) &lt; 55 {
+    if point_distance(x,y,follow.x,follow.y) &lt; 100 {
         speed = 0;
     }
 }

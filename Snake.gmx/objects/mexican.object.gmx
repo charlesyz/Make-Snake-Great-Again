@@ -74,18 +74,15 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if (player.i == 0){
-    createX = -lengthdir_x(speed,player.direction)
-    createY = -lengthdir_y(speed,player.direction)
+    createX = -lengthdir_x(45,player.direction)
+    createY = -lengthdir_y(45,player.direction)
     player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
 }
 else{
-       
-    createX = -lengthdir_x(speed,player.segment[player.i - 1].direction)
-    createY = -lengthdir_y(speed,player.segment[player.i - 1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i - 1].x + createX, player.segment[player.i - 1].y + createY, tail);
+    createX = -lengthdir_x(26,player.segment[player.i].direction)
+    createY = -lengthdir_y(26,player.segment[player.i].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i].x + createX, player.segment[player.i].y + createY, tail);
 }
-
-player.i += 1;
 
 instance_create(random(room_width), random(room_height), mexican);
 
@@ -113,15 +110,14 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if (player.i == 0){
-    createX = -lengthdir_x(speed,player.direction)
-    createY = -lengthdir_y(speed,player.direction)
+    createX = -lengthdir_x(45,player.direction)
+    createY = -lengthdir_y(45,player.direction)
     player.segment[player.i] = instance_create(player.x + createX, player.y +  createY, tail);
 }
 else{
-       
-    createX = -lengthdir_x(speed,player.segment[player.i - 1].direction)
-    createY = -lengthdir_y(speed,player.segment[player.i - 1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i - 1].x + createX, player.segment[player.i - 1].y + createY, tail);
+    createX = -lengthdir_x(26,player.segment[player.i].direction)
+    createY = -lengthdir_y(26,player.segment[player.i].direction)
+    player.segment[player.i] = instance_create(player.segment[player.i].x + createX, player.segment[player.i].y + createY, tail);
 }
 
 player.i += 1;
