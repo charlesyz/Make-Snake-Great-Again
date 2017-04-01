@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
+            <string>motion_set(point_direction(x, y, us_obj.x, us_obj.y), 3);
 </string>
           </argument>
         </arguments>
@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.life -= 1;
+            <string>player.lives -= 1;
 
 
 rand = random(4);
