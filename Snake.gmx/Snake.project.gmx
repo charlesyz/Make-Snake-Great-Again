@@ -20,6 +20,7 @@
     <object>objects\tail</object>
     <object>objects\us_obj</object>
     <object>objects\heart</object>
+    <object>objects\mexican</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>

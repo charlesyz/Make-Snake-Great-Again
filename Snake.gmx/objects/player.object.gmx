@@ -25,15 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>segment[99] = 0;
-turn = 5;
+            <string>growing = 3;
+segment[99] = 0;
+turn = 8;
 i = 0;
 mexicans[99] = 0
 j = 0;
-speed = 5;
+speed = 10;
 direction = 0;
 
-lives = 3;
+lives = 100;
 
 rand = random(4);
 if (rand &lt; 1){
@@ -49,31 +50,11 @@ else if (rand &lt; 4){
     instance_create(0, random(room_height), mexican);
 }
 
-if (i == 0){
-    createX = -lengthdir_x(40,player.direction)
-    createY = -lengthdir_y(40,player.direction)
-    player.segment[0] = instance_create(x + createX, y +  createY, tail);
-}
-else{
-    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
-    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
-}
+createX = -lengthdir_x(4,player.direction)
+createY = -lengthdir_y(4,player.direction)
+player.segment[0] = instance_create(x + createX, y +  createY, tail);
+player.i += 1;
 
-i += 1;
-
-if (i == 0){
-    createX = -lengthdir_x(40,player.direction)
-    createY = -lengthdir_y(40,player.direction)
-    player.segment[0] = instance_create(x + createX, y +  createY, tail);
-}
-else{
-    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
-    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
-}
-
-i += 1;
 </string>
           </argument>
         </arguments>
@@ -96,7 +77,8 @@ i += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction
+            <string>speed = 5 + i/8;
+image_angle = direction
 if keyboard_check(ord('A')){
     h = 1;
 }
@@ -135,7 +117,7 @@ if lives &lt;= 0{
           <argument>
             <kind>1</kind>
             <string>if other.cool == false {
-    room_restart();
+//    room_restart();
 }
 </string>
           </argument>
@@ -159,18 +141,33 @@ if lives &lt;= 0{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (i == 0){
-    createX = -lengthdir_x(40,player.direction)
-    createY = -lengthdir_y(40,player.direction)
-    player.segment[0] = instance_create(x + createX, y +  createY, tail);
+            <string>
+if (player.i == 0){
+    createX = -lengthdir_x(4,player.direction)
+    createY = -lengthdir_y(4,player.direction)
+    if player.growing &gt;= 15 {
+        player.growing = 0;
+        player.segment[0] = instance_create(x + createX, y +  createY, tail);
+        player.i += 1;
+    }
+    else {
+        player.growing += 1;
+    }
+    
 }
 else{
-    createX = -lengthdir_x(26,player.segment[player.i-1].direction)
-    createY = -lengthdir_y(26,player.segment[player.i-1].direction)
-    player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+    createX = -lengthdir_x(4,player.segment[player.i-1].direction)
+    createY = -lengthdir_y(4,player.segment[player.i-1].direction)
+    if player.growing &gt;= 15 {
+        player.growing = 0;
+        player.segment[player.i] = instance_create(player.segment[player.i-1].x + createX, player.segment[player.i-1].y + createY, tail);
+        player.i += 1;
+    }
+    else {
+        player.growing += 1;
+    }
+    
 }
-
-i += 1;
 </string>
           </argument>
         </arguments>
