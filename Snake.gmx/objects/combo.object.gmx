@@ -38,12 +38,6 @@ if thiscombo &lt;= 1 {
     instance_destroy();
 }
 size = 0.1 + player.c_combo/5;
-if size &gt; 2 {
-    size = 2;
-}
-
-draw_set_font(font1);
-
 </string>
           </argument>
         </arguments>
@@ -68,17 +62,12 @@ draw_set_font(font1);
             <kind>1</kind>
             <string>draw_set_alpha(opacity);
 draw_set_color(color);
-draw_set_font(font0);
-
 opacity -= 0.02;
 size -= size/100
-draw_text_transformed(x-size*30,y,thiscombo,size,size,0);
+draw_text_transformed(x,y,thiscombo,size,size,0);
 if size &lt; 0.1 {
     instance_destroy();
 }
-
-draw_set_font(font1);
-draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
