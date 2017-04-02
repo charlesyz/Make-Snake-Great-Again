@@ -13,6 +13,9 @@
     <sprite>sprites\us_sprite</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\eat</sprite>
+    <sprite>sprites\hillary_spr</sprite>
+    <sprite>sprites\backgr</sprite>
+    <sprite>sprites\email_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,6 +25,8 @@
     <object>objects\us_obj</object>
     <object>objects\heart</object>
     <object>objects\mexican</object>
+    <object>objects\hillary</object>
+    <object>objects\email</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
