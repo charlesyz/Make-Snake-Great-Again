@@ -31,7 +31,6 @@
     image_angle = direction;
 }
 
-motion_set(point_direction(x, y, us_obj.x, us_obj.y), 2);
 motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
 </string>
           </argument>
