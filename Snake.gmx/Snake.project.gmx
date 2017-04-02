@@ -16,12 +16,17 @@
     <sprite>sprites\hillary_spr</sprite>
     <sprite>sprites\backgr</sprite>
     <sprite>sprites\email_spr</sprite>
+    <sprite>sprites\sprite10</sprite>
+    <sprite>sprites\sprite11</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\font1</font>
     <font>fonts\font0</font>
+    <font>fonts\font2</font>
   </fonts>
   <objects name="objects">
     <object>objects\player</object>
@@ -32,9 +37,13 @@
     <object>objects\hillary</object>
     <object>objects\email</object>
     <object>objects\combo</object>
+    <object>objects\b_start</object>
+    <object>objects\text</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\title</room>
     <room>rooms\room1</room>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
