@@ -68,6 +68,9 @@ draw_text_transformed(x,y,thiscombo,size,size,0);
 if size &lt; 0.1 {
     instance_destroy();
 }
+
+draw_set_alpha(1);
+draw_set_font(font2);
 </string>
           </argument>
         </arguments>
