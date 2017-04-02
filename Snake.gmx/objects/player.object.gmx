@@ -3,7 +3,7 @@
   <spriteName>sprite0</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,7 +33,7 @@ mexicans[99] = 0
 j = 0;
 speed = 10;
 direction = 0;
-
+score = 0;
 lives = 100;
 
 rand = random(4);

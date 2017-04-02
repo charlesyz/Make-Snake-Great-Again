@@ -3,7 +3,7 @@
   <spriteName>mexican_sprite_left</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,26 +34,6 @@
 motion_set(point_direction(x, y, us_obj.x, us_obj.y), 2);
 motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -321,6 +301,9 @@ for (abcd = 0; abcd &lt;= floor(player.i/2) + 1; abcd += 1) {
         }
     }
 }
+
+score += 1;
+
 instance_destroy();
 </string>
           </argument>
@@ -437,6 +420,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>event_perform(ev_collision,tail);
+
 </string>
           </argument>
         </arguments>
