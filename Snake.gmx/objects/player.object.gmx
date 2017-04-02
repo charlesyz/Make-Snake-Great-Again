@@ -36,7 +36,7 @@ j = 0;
 speed = 10;
 direction = 0;
 score = 0;
-lives = 100;
+lives = 50;
 
 rand = random(4);
 if (rand &lt; 1){
@@ -150,7 +150,7 @@ else {
 direction = direction + turn*h;
 
 if lives &lt;= 0{
-    room_restart();
+    room_goto(title);
 }
 if distance_to_object(mexican) &lt; 22 {
     sprite_index = eat;
