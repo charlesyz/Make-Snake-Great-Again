@@ -261,6 +261,8 @@ instance_destroy();
     image_yscale = 1;
 }
 image_angle = point_direction(x,y,us_obj.x,us_obj.y);
+//image_blend = make_color_rgb(20,0,0);
+image_index = floor((count-1)/10);
 draw_self();
 draw_healthbar(x - 40, y - 35, x + 40, y - 30, 100 - (count / maxcount * 100), c_gray, c_red, c_green, 0, true, true);
 </string>

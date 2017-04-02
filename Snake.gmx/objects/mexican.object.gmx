@@ -326,8 +326,8 @@ else{
 
 
 
-for (abcd = 0; abcd &lt;= floor(player.i/2) + 1; abcd += 1) {
-    if instance_number(object_index)-1 &lt; floor(player.i/2)+1 {
+for (abcd = 0; abcd &lt;= floor(player.i/2) + 3; abcd += 1) {
+    if instance_number(object_index)-1 &lt; floor(player.i/2)+3 {
         rand = random(4);
         if (rand &lt; 1){
             instance_create(random(room_width), room_height, mexican);

@@ -33,10 +33,10 @@ if (random(1000) &gt; 1000 - player.i / 4){
         instance_create(64, random(room_height-64) + 64, hillary);
     } 
     else if (rand &lt; 2){
-        instance_create(random(room_width-64)+64, 64, hillary);
+        instance_create(random(room_width - 64) + 64, 200, hillary);
     }
     else if (rand &lt; 3){
-        instance_create(room_width-64, random(room_height-64) + 64, hillary);
+        instance_create(room_width-64, random(room_height-64) + 200, hillary);
     }
     else if (rand &lt; 4){
         instance_create(random(room_width-64)+64, room_height-64, hillary);
@@ -65,44 +65,9 @@ if (random(1000) &gt; 1000 - player.i / 4){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha = 1/(51-lives);
+            <string>image_alpha = lives/50;
 
 draw_self();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="90">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>    rand = random(4);
-    if (rand &lt; 1){
-        instance_create(64, random(room_height-64) + 64, hillary);
-    } 
-    else if (rand &lt; 2){
-        instance_create(random(room_width-64)+64, 64, hillary);
-    }
-    else if (rand &lt; 3){
-        instance_create(room_width-64, random(room_height-64) + 64, hillary);
-    }
-    else if (rand &lt; 4){
-        instance_create(random(room_width-64)+64, room_height-64, hillary);
-    }
 </string>
           </argument>
         </arguments>

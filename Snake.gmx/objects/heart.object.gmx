@@ -107,7 +107,7 @@ draw_healthbar(64, 32, room_width - 32, 60, lives / 50 * 100, c_gray, c_black ,c
           </argument>
           <argument>
             <kind>1</kind>
-            <string>Illegal Immigrants Evicted: </string>
+            <string>Illegal Immigrants Deported:</string>
           </argument>
         </arguments>
       </action>

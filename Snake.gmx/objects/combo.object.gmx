@@ -65,6 +65,7 @@ if size &gt; 2 {
             <kind>1</kind>
             <string>draw_set_alpha(opacity);
 draw_set_color(color);
+draw_set_font(font0);
 opacity -= 0.02;
 size -= size/100
 draw_text_transformed(x,y,thiscombo,size,size,0);
