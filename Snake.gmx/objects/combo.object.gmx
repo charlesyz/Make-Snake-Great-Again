@@ -38,6 +38,9 @@ if thiscombo &lt;= 1 {
     instance_destroy();
 }
 size = 0.1 + player.c_combo/5;
+if size &gt; 2 {
+    size = 2;
+}
 </string>
           </argument>
         </arguments>

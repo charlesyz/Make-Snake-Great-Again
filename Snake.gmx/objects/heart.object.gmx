@@ -32,7 +32,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,7 +56,7 @@ for(l = 0; l &lt; lives; l++){
 */
 
 draw_sprite(sprite4, 0, 32, 32)
-draw_healthbar(64, 32, room_width - 32, 60, lives, c_gray, c_black ,c_red , 0, true, true)
+draw_healthbar(64, 32, room_width - 32, 60, lives / 50 * 100, c_gray, c_black ,c_red , 0, true, true)
 
 </string>
           </argument>
