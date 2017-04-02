@@ -305,7 +305,7 @@ if (player.i == 0){
         player.speed += 1;
     }
     else {
-        player.growing += 3;
+        player.growing += 4;
     }
     
 }
@@ -319,7 +319,7 @@ else{
         player.speed += 1;
     }
     else {
-        player.growing += 3;
+        player.growing += 4;
     }
     
 }

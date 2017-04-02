@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>growing = 3;
+bonusspeed = 0;
 c_combo = 0;
 segment[99] = 0;
 turn = 8;
@@ -131,7 +132,10 @@ player.i += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 5 + i/8;
+            <string>speed = 5 + i/8 + bonusspeed;
+if bonusspeed &gt; 0 {
+    bonusspeed -= 0.2;
+}
 image_angle = direction
 if keyboard_check(ord('A')){
     h = 1;

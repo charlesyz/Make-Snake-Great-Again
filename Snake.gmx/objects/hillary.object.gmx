@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>count = 1;
-maxcount = 300
+            <string>image_angle = point_direction(x,y,us_obj.x,us_obj.y);
+count = 1;
+maxcount = 300;
 </string>
           </argument>
         </arguments>
@@ -49,7 +50,8 @@ maxcount = 300
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (count &gt; maxcount){
+            <string>image_angle = 200;//point_direction(x,y,us_obj.x,us_obj.y);
+if (count &gt; maxcount){
     count = 0;
     
     instance_create(x, y, email);
@@ -100,7 +102,12 @@ count += 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (qegqegeq = 0 ; qegqegeq &lt; 2; qegqegeq += 1){
+            <string>player.bonusspeed = 6;
+player.c_combo += 1;
+instance_create(x,y,combo);
+player.alarm[1] = 65;
+
+for (qegqegeq = 0 ; qegqegeq &lt; 2; qegqegeq += 1){
      
     if (player.i == 0){
         createX = -lengthdir_x(4,player.direction)
@@ -112,7 +119,7 @@ count += 1;
             player.speed += 1;
         }
         else {
-            player.growing += 3;
+            player.growing += 4;
         }
         
     }
@@ -126,7 +133,7 @@ count += 1;
             player.speed += 1;
         }
         else {
-            player.growing += 3;
+            player.growing += 4;
         }
         
     }
@@ -222,7 +229,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>7</string>
+            <string>20</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -248,7 +255,13 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(hillary_spr, 0, x, y);
+            <string>if x &gt; us_obj.x {
+    image_yscale = -1;
+} else {
+    image_yscale = 1;
+}
+image_angle = point_direction(x,y,us_obj.x,us_obj.y);
+draw_self();
 draw_healthbar(x - 40, y - 35, x + 40, y - 30, 100 - (count / maxcount * 100), c_gray, c_red, c_green, 0, true, true);
 </string>
           </argument>

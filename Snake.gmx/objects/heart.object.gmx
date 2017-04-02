@@ -55,7 +55,7 @@ for(l = 0; l &lt; lives; l++){
 }
 */
 
- draw_sprite(sprite4, 0, 32, 32)
+draw_sprite(sprite4, 0, 32, 32)
 draw_healthbar(70, 40, 1000, 50, lives, c_gray, c_black ,c_red , 0, true, true)
 
 </string>
@@ -86,7 +86,7 @@ draw_healthbar(70, 40, 1000, 50, lives, c_gray, c_black ,c_red , 0, true, true)
           </argument>
           <argument>
             <kind>1</kind>
-            <string>Mexicans Evicted: </string>
+            <string>Illegal Immigrants Evicted: </string>
           </argument>
         </arguments>
       </action>
