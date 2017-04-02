@@ -12,6 +12,7 @@
     <sprite>sprites\mexican_sprite_left</sprite>
     <sprite>sprites\us_sprite</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\eat</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
