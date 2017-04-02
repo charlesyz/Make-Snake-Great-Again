@@ -194,6 +194,46 @@ motion_set(point_direction(x, y, us_obj.x, us_obj.y), 1);
     <event eventtype="4" ename="us_obj">
       <action>
         <libid>1</libid>
+        <id>532</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_effect</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>6</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>13</kind>
+            <string>16711680</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -251,7 +291,10 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>player.c_combo += 1;
+instance_create(x,y,combo);
+player.alarm[1] = 65;
+
 if (player.i == 0){
     createX = -lengthdir_x(4,player.direction)
     createY = -lengthdir_y(4,player.direction)

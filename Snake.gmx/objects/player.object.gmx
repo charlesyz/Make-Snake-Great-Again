@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>growing = 3;
+c_combo = 0;
 segment[99] = 0;
 turn = 8;
 i = 0;
@@ -55,6 +56,29 @@ createY = -lengthdir_y(4,player.direction)
 player.segment[0] = instance_create(x + createX, y +  createY, tail);
 player.i += 1;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>c_combo = 0;
 </string>
           </argument>
         </arguments>
@@ -126,6 +150,7 @@ if lives &lt;= 0{
 }
 if distance_to_object(mexican) &lt; 22 {
     sprite_index = eat;
+    alarm[0] = 20;
 } else {
   //  sprite_index = sprite0;
 }

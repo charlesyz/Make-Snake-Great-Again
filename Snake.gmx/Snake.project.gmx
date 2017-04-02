@@ -19,14 +19,22 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font1</font>
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\tail</object>
     <object>objects\us_obj</object>
     <object>objects\heart</object>
     <object>objects\mexican</object>
+<<<<<<< HEAD
     <object>objects\hillary</object>
     <object>objects\email</object>
+=======
+    <object>objects\combo</object>
+>>>>>>> origin/master
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
